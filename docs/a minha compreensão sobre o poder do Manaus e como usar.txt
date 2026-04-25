@@ -1,0 +1,44 @@
+
+
+ANIMAÇÕES/CENÁRIOS/ASSETS (Gere ZIP independente integrável projeto C++)**
+
+**CONCEITO CORE:** Mundo "ANIMAÇÃO VIVA INTERATIVA" SFML 2.6 – cenários camadas parallax leves (sem FPS drop), TUDO visível interativo (toque/quebra/usa), sync perfeito SFX/frames. Mundo respira, reage player.
+
+**1. SISTEMA ANIMAÇÕES/CAMADAS (Leve Uncapped FPS):**
+- **Parallax Multi-Camadas (5-8 por bioma):** Fundo fios distantes (vel slow sinwave), mid Nós vibrando (player dist trigger), fg partículas sombra vento seeded.
+- Anims **Inteligentes Não-Loop Infinito:** Ciclo 3s vibra > 5s pausa > tremor boss near. Shaders vertex wave (sin time) – <3% overhead.
+- Ex: Menu título "THREADFALL" letras deform sombra + fios chuva parallax sync SFX gotejar.
+- Biomas: Fios "pulsam" mid-layer, Nós fg "olham" player (rotate subtle).
+
+**2. INTERATIVIDADE 100% ("Visível = Usável"):**
+- Todos objetos cenários: Fios toque = puxa/quebra (chain reaction particles leve), Nós pequenos = pickup fragmento, destroços throw dano.
+- SFML Physics: Rigidbodies itens destrutíveis real-time.
+
+**3. CONFIGS MENU (Gráficos Submenu):**
+- Toggle: Full (all layers/particles), Low (essential parallax), Basic (static + morph combate) – nunca zero (anti-trava).
+- Sliders: Parallax Speed, Particle Density, Shader Intensity. JSON save.
+
+**4. ASSETS PIPELINE MANUS SANDBOX (Ubuntu/VS Code):**
+sudo apt update && apt install imagemagick ffmpeg sox curl
+mkdir assets && cd assets
+
+**RECORTE SPRITES MULTI-POSE PERFEITO (ref imagem 1000029280.jpg 4 poses):**
+- magick ref.jpg -crop 25%x100%+0%+0% pose1.png  # Exato bbox pose1 (manual preview display ref.jpg)
+- Repeat pose2 (25%x+25%),3(+50%),4(+75%) – NO AUTO CROP (erra corpo/over).
+- Clean Alpha "Pincel Erase": magick pose1.png -fuzz 15% -transparent black -morphology Erode Diamond:1 clean_pose1.png  # Remove extra pedaços/overlaps outros sprites.
+- Batch 48 frames Knotfall: Gemini "Pixel art exato pose1 ref imagem, sombra capuz glow fios 128px PNG alpha" > imagemagick sheet.
+
+**GEN FULL ASSETS:**
+- Sprites: knotfall_sheet.png (idle/run/morph 48frames), enemies25, tiles80 fios parallax layers.
+- Particles/UI: Sombra burst20, Nós glow anim6, HUD fios.
+- SFX: 40 WAV sync (morph swoosh frame-exato, fio quebra, regen weave). Freesound curl + ffmpeg trim.
+- Music: 8 OGG loops synth melancólicos biomas (sox gen).
+
+**CÓDIGO SFML INTEGRADOR:**
+src/ParallaxManager.cpp (layers vector<sf::Sprite> speed/wave), InteractiveLayer.cpp (raycast touch physics), AnimSync.cpp (SFX play frame lock).
+Test: g++ test_anim.cpp -lsfml-all -o test && ./test (render bioma full uncapped).
+
+**OUTPUT ZIP:**
+threadfall_anim_assets.zip com assets/ + src snippets + README "Integre main projeto".
+
+Execute pipeline – cenários/anims/assets PRO leves interativos!

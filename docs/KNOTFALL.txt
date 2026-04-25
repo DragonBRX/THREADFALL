@@ -1,0 +1,45 @@
+
+ 
+KNOTFALL - Perfil Completo e Definitivo do Protagonista
+
+ Identidade Básica
+- Nome: KNOTFALL  
+- Raça: Sombra Viva (entidade etérea fluida de sombra pura, criada para navegar/manipular Fios do mundo).  
+- Aparência: Silhueta negra com capuz/capa esvoaçante, olhos glow brancos fixos (único elemento rígido), fios etéreos emanando constantemente. Altura visual 1.5m (pixel art 64-128px). Paleta dark minimalista com glows sutis.[2]
+
+ História e Psicológica
+- Origem Inicial (Ilusão Jogador): Desperta no silêncio pós-Threadfall crendo ser humano transformado em sombra ("Era sólido... agora só ausência nos membros"). Mundo sem humanos (extintos), só monstros (inimigos/bosses Nós falhos) reforça suposição.
+- Progressão: Cada boss dropa fragmento sombra = poder morph + memória fragmentada ("Lembro mãos humanas fortes?").
+- Revelação Final 3 (Canon): Sempre foi sombra solitária dos tece dores – memória perdida no colapso levou a assumir "humano sobrevivente". Propósito transitório: reconectar existências.
+- Finais:
+  | Final | Escolha | Desfecho |
+  |-------|---------|----------|
+  | 1 Vazio | Aceitar solidão | Chuva fios eterna, parado – ilusão humana persiste vazia. |
+  | 2 Deuses | Conquistar | Morph foices brutais arranca cabeças/esmaga – "vingança humana" caos. |
+  | 3 Sacrifício | Reconectar | Revela verdade sombra, dissolve vitalidade reconstrói vidas todas. |
+
+ Mecânicas Principais: Manipulação Corporal (100+ Variações)
+Corpo sombra = arma viva fluida, morphs pós-boss combináveis para counters/sinergias. Input limitado (teclado/joystick) libera profundidade complexa ("fácil entrada, difícil mastery").
+
+- Categorias Morphs (Sub-vars contextuais inimigo/dir/hold/tap):
+  1. Claws/Espada (25+): Melee rápida (tap), pierce ranged (hold), uppercut anti-air (cima), spin sweep (lado).
+  2. Asas Etéreas (30+): Dash burst (tap), glide wallride (hold), air multi-dash (double), slam shockwave (baixo).
+  3. Tendrils/Foice (25+): Pull single (tap), net área slow (hold), grapple swing (parede), whirlwind spin.
+  4. Forma Avançada (20+): Shield block (contraída), thin dodge i-frames (esticada), roll speed (bola), fios heal Nós (curl).
+
+- Controles Inteligentes:
+  | Input | Ação Base | Exemplo Var |
+  |-------|-----------|-------------|
+  | Shift + Dir | Morph ativa | Shift+Esq = claws pierce. |
+  | Hold + Combo | Extensão | Shift+Space = asa slam claw follow. |
+  | Joystick | Dir Left + Trigger Right | Bump Left hold = tendril net. |
+  | Contextual | Auto-adapt | Parede near = grapple, voador = anti-air. |
+
+- Estados Animação (48 Frames Spritesheet): Idle (6 respiração fios), Run (10 glide trail), Morph Trans (12 deform glow), Ataque (8/tipo), Hurt (4 fumo), Death (6 dissolve).[2]
+
+ Integração ao Gameplay
+- Evolução: Início 1 morph básico (claws simples), late-game 100+ chains (tendril trap > claw spin > asa escape).
+- Complexidade: Input limitações forçam criatividade – morph vs boss phase, synergy quebra mundo (fio pull abre path).
+- Lore Ties: Morphs "reaprendem técnicas tece dores", pistas sombra verdadeira (fios reagem só ele, monstros hesitam).
+
+KNOTFALL: de "humano frágil iludido" a sombra  adaptável – narrativa + mecânica profunda em um pacote.[2]

@@ -1,0 +1,57 @@
+Crie projeto 2D C++ SFML 2.6 ultra-profissional, estrutura VS Code/CMake/vcpkg ZIP pronto extrair/rodar. Jogo: THREADFALL - A Queda dos Fios. Metroidvania hardcore ~12h (dificuldade alta pixel-perfect como Hollow Knight mecânicas, mas lore/visual 100% original fios/sombra). Solo+IA dev.
+
+**LORE COMPLETA (THREADFALL.txt verbatim em cutscenes/memórias):**
+Mundo Fios/Nós colapsados (Threadfall silencioso). KNOTFALL desperta sombra instável crendo ex-humano caído (revelação: sempre sombra solitária criada para fios). Tecedores > Nós vivos/bosses. Jornada desata/reconstrói, recupera fragmentos sombra (memórias+poderes). Temas vazio/propósito/deuses acima/sacrifício reconexão. Início: "Sinto ausência... era humano?". Finais twists profundos.
+
+**PERSONAGEM E VISUAL (exato imagem 1000029280.jpg):**
+KNOTFALL silhueta negra capuz esvoaçante, olhos glow brancos intensos, fios/sombras emanando partículas. Poses base sprites: espada morph (pose1), asas voo (2/3), foice tendrils (4), fumo deform. Paleta escuro minimalista glows. Assets PNG animados morph fluido.
+
+**GAMEPLAY ESPECÍFICO (UNCAPPED FPS, DIFICULDADE EXPERT):**
+- FPS: Uncapped default (config slider 30/60/120/240/uncapped/VSync).
+- Controles: Full remap keybind (teclado + gamepad joystick SFML detect auto), default WASD mover, Space pulo, Shift dash/morph ativa, Mouse1 ataque sombra, R interagir/Nó save.
+- SEM ARMAS: KNOTFALL = arma viva sombra. Boss dropam FRAGMENTOS SOMBRA (cutscene texto memória + morph corporal SFML deform particles):
+  * Asas sombra: dash voo/wallfly (poses 2/3).
+  * Claws/espada sombra: melee esticável rápido (pose1).
+  * Tendrils/foice: área alcance chicote (pose4).
+  * Alongado: gravidade manip/wallclimb double.
+- Física: Gravidade responsiva, colisões tight AABB, juice (hitstop/shake/slowmo parry).
+- Dificuldade: Inimigos agressivos, bosses 4+ fases padrões dodge-heavy, vida 3 hits max, saves escassos.
+- Saves: "Nós de Fios" interativos espalhados (aproxime > regen full vida + auto-save JSON). Visual: fios tecem sombra curando.
+- Conteúdo: 6 biomas fios falhos (ruínas/abismo/panteão deuses), 15 inimigos tipos fios, 10 bosses (Nós/Tecedores/deuses drop essenciais).
+- HUD: Vida/mana sombra bars glow, minimapa revelável, nós contador, FPS counter debug.
+
+**TELAS/UI CUSTOM DIFERENCIADAS:**
+- **Menu Inicial/Splash:** Fundo fios pulsantes/chuva sutil, título THREADFALL sombra deform glow, botões morph animados:
+  * NOVO JOGO (cutscene despertar lore).
+  * CARREGAR (3 slots JSON).
+  * CONFIGURAÇÕES (detalhado abaixo).
+  * SAIR.
+  Transições fade partículas fios.
+- **Configurações (submenus navegáveis):**
+  * CONTROLES: Lista ações (mover/pulo/dash/ataque) > bind tecla/joystick button, save JSON.
+  * GRÁFICOS: Resolução presets (720p/1080p/1440p/4K), Fullscreen/WBorderless, FPS Cap slider, VSync, Shader Quality.
+  * ÁUDIO: Sliders Master/SFX/Music, mute toggles.
+  * AVANÇADO: Invencibility debug toggle, Reset All.
+  * Aplicar & Salvar / Cancelar.
+- **Pause Overlay:** Semi-transp fios: Resume/Config/Sair (confirma sem save).
+
+**TRÊS FINAIS (hub pós-último boss, 3 botões escolha – ANIMAÇÕES SFML NÃO-JOGÁVEIS 60s cada):**
+1. "Aceitar Vazio": Chuva fios incessante; KNOTFALL parado imóvel triste sob gotas, fade lento créditos (poder total, solidão vazia).
+2. "Conquistar Deuses": Ascende panteão fios; derrota brutal sequencial (arranca cabeça deus1, esmaga chão, um por um destruição) – vira deus caos supremo, mundo rui vitorioso.
+3. "Restaurar Vida" (Canon Heroico): Revela "Sempre sombra solitária, sem humanidade passada"; sacrifica vitalidade total morph fios massivos, desfaz colapso global, reconecta tecedores/vidas todas – dissolve luminoso explosão reconstrutiva, mundo pulsa vivo final hopeful.
+
+**ESTRUTURA ZIP PROFISSIONAL (VS CODE AUTO-DETECT):**
+- CMakeLists.txt (SFML all: graphics/window/system/audio/joystick + GLM math).
+- vcpkg.json (SFML 2.6 pinned).
+- src/ (main.cpp bootstrap, GameLoop.cpp states FSM, Knotfall.cpp morph system, EnemyAI.cpp, BossDeus.cpp, TileWorldTMX.cpp, ParticleSys.cpp, ShadowMorphShader.cpp, MenuState.cpp (splash/config/keybind), NoSavePoint.cpp (interact regen), EndingHub.cpp (3 cenas full), ConfigJson.cpp, InputRemap.cpp).
+- assets/ (spritesheets 40+ PNG Knotfall poses/imagem, tiles fios 50, UI buttons fios glow, sons 30 WAV impactos/ambient, music 8 OGG loops melancólicos, fonts TTF lore texto).
+- shaders/ (morph_deform.frag, fios_glow.vert).
+- docs/ (README.md "1. vcpkg install; 2. VSCode Open; 3. Ctrl+Shift+P CMake Configure/Build; 4. F5 Run", GDD.pdf 20pags full diagrams/balance/lore).
+- .vscode/ (tasks.json multi-build/debug/menu-test, launch.json gdb breakpoints, c_cpp_properties.json IntelliSense paths).
+
+**VALIDAÇÃO FINAL:**
+- Código limpo modular, 0 warnings, perf uncapped hordes smooth.
+- Teste 100%: Full playthrough todos biomas/upgrades/saves/Nós regen/finais, gamepad remap persiste, configs salvam, dificuldade "expert soulsvania".
+- Polish AAA indie: SFX viscerais, OST imersiva, juice máximo.
+
+Exporte ZIP otimizado agora – masterpiece pronto Steam!

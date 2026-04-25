@@ -1,0 +1,34 @@
+
+ANIMAÇÕES E CENÁRIOS - THREADFALL (adicione/integre ao projeto principal ZIP)**
+
+Crie sistema ANIMAÇÕES/CENÁRIOS ultra-leve SFML 2.6 para THREADFALL metroidvania. Conceito: "Mundo vivo animado em camadas" – cenários param sem vida = horrível; use **PARALLAX CAMADAS MÚLTIPLAS** para efeito animação fluida (não vídeo pesado). Tudo **INTERATIVO** (visível = toque/quebra/usa). FPS uncapped intacto.
+
+**ESTRATÉGIA CAMADAS (leve <5% overhead):**
+- 5-8 camadas por bioma (fundo fios distantes > midground Nós vibrando > foreground partículas sombra > UI HUD).
+- Movimento: Parallax velocidade inversa (fundo lento, front rápido) + sinwave oscilação suave (fios "respiram").
+- Animações **NÃO LOOP INFINITO**: Ciclos inteligentes sincronizados (ex: fio vibra 3s > pausa 5s > tremor boss próximo trigger).
+- Leveza: Sprite batches/draw calls pooled, shaders vertex parallax (não pixels por frame).
+
+**EXEMPLOS ANIMAÇÕES SINCRONIZADAS:**
+- Título Splash/Menu: "THREADFALL" letras sombra deform sinwave + fios chuva parallax caindo (sync SFX gotejar eco).
+- Biomas: Ruínas fios "pulsam" camada mid (sin time), Nós foreground "tremem" player perto (dist-based), partículas sombra vento aleatório mas seeded.
+- Combate: Ataque morph sync exato SFX (claw estica frame 1 hit, partículas burst frame hitstop).
+- Saves Nó Fios: Interact > camadas fios tecem player regen (morph visual vida bar, SFX weave suave).
+- Finais: Camadas intensas (chuva final1 parallax heavy + vento, deuses panteão colapso layers ruindo).
+
+**INTERATIVIDADE TOTAL ("Visível = Usável"):**
+- 100% objetos cenários: fios toque = puxa/quebra (efeito chain reaction leve), Nós menores = pickup fragmento sombra, destroços = throw dano inimigo.
+- Physics SFML: Rigidbodies itens destrutíveis (quebra real-time partículas).
+- Ex: "Vejo fio solto? Puxo > quebra parede secreta". Mundo reage player.
+
+**CONFIGS ANIMAÇÕES (Menu Gráficos):**
+- Toggle: Full Anim (todas camadas/parallax/partículas), Low (basic parallax + essential), Off (static mas basic morph combate persiste – nunca 0 animação trava).
+- Sliders: Particle Density, Parallax Speed, Shader Quality. Save JSON, default Full (otimizado nunca drop FPS).
+
+**IMPLEMENTAÇÃO TÉCNICA:**
+- src/: ParallaxLayerManager.cpp (addLayer/speed/wave), AnimatedWorld.cpp (bioma layers + triggers), InteractiveObject.cpp (todos itens raycast touch/physics), SyncEffect.cpp (SFX-frame lock).
+- assets/: layer_fios_bg.png (8 variações biomas), particle_shadow.png, break_debris.png set.
+- shaders/: parallax_wave.vert (vertex displace sin time).
+- Teste: 200+ objetos tela uncapped 144FPS+, toggle instant switch.
+
+Gere arquivos/código pronto integrar ZIP principal – cenários "ANIMAÇÃO VIVA INTERATIVA" sem peso!
